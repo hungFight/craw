@@ -1,30 +1,31 @@
 CREATE TABLE `league`(
     `id` BIGINT NOT NULL AUTO_INCREMENT,
-    `night_wolf` VARCHAR(200) NOT NULL,
-    `bia_sao_vang` VARCHAR(200) NOT NULL,
-    `casper` VARCHAR(200) NOT NULL,
+    `name` varchar(200),
      PRIMARY KEY (id)
 );
 
 
 CREATE TABLE `match_of_league`(
-    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `id` varchar(200),
     `league_id` BIGINT,
-    `title` VARCHAR(200) NOT NULL,
-    `time` VARCHAR(200) NOT NULL,
-    `hour` VARCHAR(200) NOT NULL,
-    `ordinal_number` BIGINT NOT NULL,
-    `place` VARCHAR(200) NOT NULL,
-    `team1` VARCHAR(200) NOT NULL,
-    `team2` VARCHAR(200) NOT NULL,
-    `result` VARCHAR(200) NOT NULL,
-    `broadcasters` VARCHAR(200) NOT NULL,
-    `audiences` VARCHAR(200) NOT NULL,
+    `date` varchar(200),
+    `index` bigint,
+    `title` VARCHAR(200) ,
+    `hour` VARCHAR(200) ,
+    `ordinal_number` varchar(100),
+    `venue` VARCHAR(200) ,
+    `home` VARCHAR(200),
+    `away` VARCHAR(200) ,
+    `score` VARCHAR(200) ,
+    `channel` VARCHAR(200) ,
+    `audience` VARCHAR(200) ,
      PRIMARY KEY (id)
 );
 
 ALTER TABLE match_of_league
 ADD FOREIGN KEY (league_id) REFERENCES league(id);
+
+insert into  league (name) values ("night-wolf"), ("bia-sao-vang"), ("casper");
 
 
 
